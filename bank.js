@@ -47,4 +47,26 @@ atmTransaction("Withdrawal", 50);
 atmTransaction("Undo");
 atmTransaction("Fee");
 
+//  Loan App
+function processLoans(scores) {
+  let eligible = scores.filter(score => score > 700);
+  let adjustedScores = scores.map(score => score + 20);
+  let totalRisk = scores.reduce((sum, score) => sum + score, 0);
+  let hasPerfect = scores.some(score => score === 900);
+  let allAbove400 = scores.every(score => score >= 400);
+  let firstRisk = scores.find(score => score < 500);
+  let riskIndex = scores.findIndex(score => score < 500);
+  console.log("loan app:");
+
+  console.log("Eligible:", eligible);
+  console.log("Adjusted:", adjustedScores);
+  console.log("Total Risk:", totalRisk);
+  console.log("Has Perfect:", hasPerfect);
+  console.log("All ≥ 400:", allAbove400);
+  console.log("First Risk:", firstRisk);
+  console.log("Risk Index:", riskIndex);
+}
+
+processLoans([650, 800, 500, 720, 410, 900]);
+
 

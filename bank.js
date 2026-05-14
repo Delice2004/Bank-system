@@ -112,6 +112,40 @@ console.log("Sorted Z-A:", sorted);
 console.log("Banner:", banner);
 console.log("Tellers:", tellerWindows);
 
+//  Security and Report
+
+function validateBankPassword(password) {
+  let vowels = /[aeiou]/i;
+  console.log("security and report:");
+  if (
+    password.length >= 8 &&
+    !password.toLowerCase().includes("password") &&
+    vowels.test(password)
+  ) {
+    return "Access Granted";
+  }
+  return "Access Denied";
+}
+
+function generateYearlyReport(startYear, endYear) {
+  console.log("yearly report:");
+  for (let year = startYear; year <= endYear; year++) {
+    if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+      console.log(`Year ${year} is a special audit year.`);
+    }
+    if (year % 5 === 0) {
+      console.log(`${year} - 5 Year Anniversary`);
+    }
+    if (year % 10 === 0) {
+      console.log(`${year} - Decade Anniversary`);
+    }
+  }
+}
+
+// test part:
+console.log(validateBankPassword("secureBank1"));
+generateYearlyReport(2000, 2020);
+
 
 
 

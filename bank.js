@@ -89,5 +89,30 @@ dailyTransactions.forEach(id => {
   console.log(`Transaction ${id} cleared.`);
 });
 
+//  Bank Merg
+
+let branchA = ["Alice", "Bob"];
+let branchB = ["Charlie", "Diana"];
+let allCustomers = branchA.concat(branchB);
+
+let messyData = [["Eve", "Frank"], ["Grace"], ["Hank", "Ivy"]];
+let flatData = messyData.flat();
+
+let sorted = flatData.sort().reverse();
+
+let banner = allCustomers.join(" - ");
+
+let tellerWindows = new Array(5).fill("Closed");
+
+console.log("bank merg :");
+
+console.log("All Customers:", allCustomers);
+console.log("Flat Data:", flatData);
+console.log("Sorted Z-A:", sorted);
+console.log("Banner:", banner);
+console.log("Tellers:", tellerWindows);
+
+
+
 
 

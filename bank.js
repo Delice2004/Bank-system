@@ -69,4 +69,25 @@ function processLoans(scores) {
 
 processLoans([650, 800, 500, 720, 410, 900]);
 
+// Fraud Detect
+
+let dailyTransactions = [1042, 8922, 3301, 5510, 7719, 9920];
+let fraudID = 5510;
+console.log("fraud detect:");
+
+if (dailyTransactions.includes(fraudID)) {
+  let index = dailyTransactions.indexOf(fraudID);
+  console.log("Fraud found at index:", index);
+
+  let lastThree = dailyTransactions.slice(-3);
+  console.log("Last 3 transactions:", lastThree);
+
+  dailyTransactions.splice(index, 1);
+}
+
+dailyTransactions.forEach(id => {
+  console.log(`Transaction ${id} cleared.`);
+});
+
+
 
